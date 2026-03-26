@@ -1,0 +1,121 @@
+:root {
+    --font-body: 'Roboto', sans-serif;
+    --color-white: #ffffff;
+    --color-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.panel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    animation: slowZoom 25s linear infinite alternate;
+    will-change: transform;
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    z-index: 2;
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.gsap-reveal {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 80%;
+    height: auto;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.status-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 0.5rem;
+}
+
+.status-text {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    opacity: 0.9;
+}
+
+.email-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    transition: opacity 0.3s;
+}
+
+.email-link:hover { opacity: 0.7; }
